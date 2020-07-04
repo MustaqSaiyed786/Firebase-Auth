@@ -31,14 +31,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (view!!.id) {
 
             R.id.btnMobileOtp -> {
-                startActivity(Intent(this,MobileOtpActivity::class.java))
+                startActivity(Intent(this, MobileOtpActivity::class.java))
             }
             R.id.btnGoogleLogin -> {
-                customToast("Google")
+                startActivity(Intent(this, GoogleSignInActivity::class.java))
             }
             R.id.btnFacebookLogin -> {
                 customToast("Facebook")
             }
+
         }
     }
 
