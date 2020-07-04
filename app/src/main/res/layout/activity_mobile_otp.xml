@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MobileOtpActivity">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/icon"
+        app:layout_constraintStart_toStartOf="@+id/icon"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        tools:text="Title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Firebase Mobile Otp"
+        android:textColor="@color/colorFirebaseDarkGray"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH20"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20" />
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Signed Out"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toBottomOf="@+id/detail"
+        tools:text="Sign out" />
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        tools:text="Firebase User ID: 123456789abc" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/fieldPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/primary_edittext_background"
+        android:hint="Mobile"
+        android:padding="15dp"
+        android:maxLength="10"
+        android:inputType="number"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toStartOf="@+id/buttonStartVerification"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH20" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/fieldVerificationCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/primary_edittext_background"
+        android:hint="OTP"
+        android:inputType="numberPassword"
+        android:maxLength="6"
+        android:padding="15dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="@+id/fieldPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toBottomOf="@+id/fieldPhoneNumber" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonStartVerification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="@drawable/button_primary"
+        android:padding="17dp"
+        android:text="Send OTP"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldPhoneNumber"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintTop_toTopOf="@+id/fieldPhoneNumber" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonVerifyPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_primary"
+        android:text="Verify"
+        android:padding="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fieldVerificationCode"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/buttonStartVerification"
+        app:layout_constraintTop_toTopOf="@+id/fieldVerificationCode" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonResend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_primary"
+        android:padding="15dp"
+        android:text="Resend"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH75"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignOutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_primary"
+        android:text="Sign Out"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV20"
+        app:layout_constraintTop_toBottomOf="@+id/buttonResend" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
